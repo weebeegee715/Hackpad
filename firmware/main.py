@@ -1,5 +1,7 @@
 # You import all the IOs of your board
 import board
+import adafruit_displayio_ssd1306
+import displayio
 
 # These are imports from the kmk library
 from kmk.kmk_keyboard import KMKKeyboard
@@ -35,7 +37,8 @@ keyboard.keymap = [
      KC.Macro(Press(KC.LCMD), Tap(KC.MINUS), Release(KC.LCMD))
      ]
 ]
-
 # Start kmk!
 if __name__ == '__main__':
     keyboard.go()
+
+displayio.release_displays()
